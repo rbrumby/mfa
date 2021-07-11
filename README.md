@@ -1,7 +1,7 @@
 # mfa
 
-## A virtual (terminal-based) Multi-factor-Authentication device.
-### Can be used in the same way as tools like Google Authenticator.
+A virtual (terminal-based) Multi-factor-Authentication device.
+Can be used in the same way as tools like Google Authenticator.
 
 Tools like Google Authenticator are usually run on a separate device to the device you use to log in so that if one device is lost / stolen, all credentials (SSH keys, saved passwords in browsers, etc) are not compromised.
 
