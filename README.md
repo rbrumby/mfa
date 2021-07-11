@@ -14,3 +14,10 @@ To use this with AWS, if you already have an MFA device associated with your acc
 Remove the existing device under your accounts "My Security Credentials", add a new Virtual MFA device, choose the option to "Show secret key" & save the key to $HOME/.mfa/secret. You should also make sure this file is only readable to your user (you will get a warning when running mfa if you do not)!
 
 "go run mfa.go --help" for mpre details on the options
+
+## Docker
+There is also a Docker image available:
+The following example assumes your local machine has your secret file in the default location & overrides the default entrypoint to demonstrate setting custom colors. 
+```
+docker run --rm --name mfa -v $HOME/.mfa/secret:/.mfa/secret --entrypoint="" roybrumby/mfa:1.0 /mfa --color=cyan --warn-color=yellow
+```
