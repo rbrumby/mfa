@@ -13,7 +13,7 @@ This utility wraps the above library into an executable and add flags for settin
 To use this with AWS, if you already have an MFA device associated with your account, you will need to replace it.
 Remove the existing device under your accounts "My Security Credentials", add a new Virtual MFA device, choose the option to "Show secret key" & save the key to $HOME/.mfa/secret. You should also make sure this file is only readable to your user (you will get a warning when running mfa if you do not)!
 
-"go run mfa.go --help" for mpre details on the options
+'''go run cmd/cmd.go --help''' for mpre details on the options
 
 ## Docker
 There is also a Docker image available:
