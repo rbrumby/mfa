@@ -17,7 +17,15 @@ Remove the existing device under your accounts "My Security Credentials", add a 
 
 ## Docker
 There is also a Docker image available:
-The following example assumes your local machine has your secret file in the default location & overrides the default entrypoint to demonstrate setting custom colors. 
+The following example assumes your local machine has your secret file in the default location & overrides the default entrypoint to demonstrate setting custom colors & a timezone.
 ```
-docker run --rm --name mfa -v $HOME/.mfa/secret:/.mfa/secret --entrypoint="" roybrumby/mfa:1.0 /mfa --color=cyan --warn-color=yellow
+docker run --rm --name mfa -e TZ="Europe/London" -v $HOME/.mfa/secret:/.mfa/secret --entrypoint="" roybrumby/mfa:1.0 /mfa --color=cyan --warn-color=yellow
+```
+If you run the above with -d, your container will run in the background & you can then run the following to attach to it:
+```
+docker attach mfa
+```
+...or, if your container is stopped because you pressed <ctrl>c to exit from a previous attach:
+```
+docker start -a mfa
 ```

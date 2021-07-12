@@ -9,5 +9,6 @@ RUN cd /mfa && go build -o ./mfa mfa.go
 
 FROM scratch
 ENV HOME=/
+COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=build /mfa/mfa /mfa
 ENTRYPOINT ["/mfa"]
